@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans');
+
+.required-field > label::after {
+    content: " *";
+    color: #F44336;
+}
+
+.popover-content {
+    word-wrap: break-word;
+}
+
+.sidebar-hidden .content-wrapper,
+.sidebar-hidden .main-footer {
+    margin-left: 0;
+}
+
+.sidebar-hidden .sidebar-toggle {
+    display: none;
+}
+
+.main-sidebar .fa {
+    font-size: large;
+    margin-right: 5px;
+}
+
+.main-footer {
+    margin-left: 0px;
+}
+
+.treeview-menu li.active span, .treeview-menu li.active i {
+    color: #FFF;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+.profile-user-img {
+    cursor: pointer;
+}
+
+.popover {
+    max-width: 50%;
+}
+
+.treeview-menu > li > a {
+    padding-left: 25px;
+}
+
+/** Some Styling Changes
+
+ */
+
+body {
+    font-family: "Fira Sans", "Helvetica Neue", Arial, sans-serif;
+    color: #1D2939;
+
+}
+
+.content-wrapper {
+    background-image: url(../img/3132.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main-sidebar {
+    background-color: #283341;
+    font-size: 13px;
+
+}
+
+.main-header, .main-footer {
+    background-color: #1D2939;
+}
+
+.main-sidebar li a, .main-sidebar li, .main-sidebar a, .main-header a, .main-footer {
+    color: #adb5bd;
+}
+
+.content-wrapper {
+    min-height: 100%;
+    background-color: #ecf0f5;
+    z-index: 800;
+}
+
+@media only screen and (min-width: 768px) {
+    .content-wrapper, .main-footer {
+        margin-left: 210px;
+    }
+
+    .main-sidebar, .main-header .logo {
+        width: 210px;
+    }
+}
+
+.navbar-nav > .user-menu > .dropdown-menu > li.user-header > p {
+    color: #1D2939;
+}
+
+.main-footer {
+
+    background-color: #1D2939;
+}
+
+.table-condensed > tbody > tr > td {
+    padding: 10px 5px;
+}
+
+.icheckbox_square-blue {
+    margin-top: 5px;
+}
+
+select[readonly] {
+    background: #eee;
+    cursor: no-drop;
+}
+
+select[readonly] option {
+    display: none;
+}
+
+.text-center img {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.select2 {
+    width: 100% !important;
+}
