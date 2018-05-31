@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Laravel</title>
-
+	
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
@@ -70,6 +70,13 @@
 									</div>
 								</div>		
 							</div>
+							<div class="col-md-2">
+								<div class="row">
+									<input type="radio" name="gender" value="male" checked> Both<br>
+									<input type="radio" name="gender" value="female"> 1 - in<br>
+									<input type="radio" name="gender" value="other"> 2 - out 
+								</div>	
+							</div>
 							<div class="col-md-8 pull-right">
 								<div class="row">
 									<div class="col-md-3">
@@ -111,6 +118,38 @@
 
 						</tbody>
 					</table>
+					
+					<div class="bottom_content">
+						<div class="bottom_content_left">
+							<div class="row">
+								<div class="col-md-2 text-center">
+									<span class="bottom-span">242</span>
+									<p class="bottom_p">total calls</p>
+								</div>
+								<div class="col-md-2 text-center">
+									<span class="bottom-span">153:10 h:mm</span>
+									<p class="bottom_p">Sum Duration</p>
+								</div>
+								<div class="col-md-2 text-center">
+									<span class="bottom-span">2:17 m:ss</span>
+									<p class="bottom_p">per call</p>
+								</div>
+							</div>
+						<div>
+						<div class="row">
+							<div class="col-md-12 text-center">
+								<button class="btn btn-default">Reset all filters to default</button>	
+								<button class="btn btn-primary">Reset all filters to default</button>	
+							</div>
+							<div class="col-md-12">
+								<label> Additional Filters</label>
+								<div>
+									<input type="checkbox" name="vehicle" value="Bike"> only answered<br>
+									<input type="checkbox" name="vehicle" value="Car" checked> Duration >0<br>
+								</div>	
+							</div>
+						</div>
+					</div>	
 				</div>
 			</div>	
         </div>
