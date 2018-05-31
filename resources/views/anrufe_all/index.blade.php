@@ -11,65 +11,14 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-	
+		<link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="{{ asset('la-assets/plugins/datatables/datatables.min.css') }}"/>
 	<link href="{{ asset('assets/css/pages/tables.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{ asset('assets/css/recruitment/recruitment.css') }}" rel="stylesheet" type="text/css"/>
 	<link href="{{ asset('assets/register/dist/css/datatable/dataTables.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
 	<link href="{{ asset('assets/register/dist/css/datatable/dataTablesCustom.css') }}" rel="stylesheet" type="text/css" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" src="{{ asset('assets/js/bootstrap.min.js') }}" ></script>
 	<script type="text/javascript" src="{{ asset('assets/vendors/datatables/js/jquery.dataTables.js') }}" ></script>
     <script type="text/javascript" src="{{ asset('assets/vendors/datatables/js/dataTables.bootstrap.js') }}" ></script>
 	<script type="text/javascript" src="{{ asset('assets/vendors/datatables/js/dataTables.buttons.js') }}" ></script>
@@ -88,42 +37,82 @@
 	
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
-            @endif
+        <div class="container-fluid">
+			<div class="row">
+				@if (Route::has('login'))
+					<div class="top-right links">
+						@auth
+							<a href="{{ url('/home') }}">Home</a>
+						@else
+							<a href="{{ route('login') }}">Login</a>
+							<a href="{{ route('register') }}">Register</a>
+						@endauth
+					</div>
+				@endif
 
-            <div class="content">
-                <table id="table_1" class="table table-striped table-bordered table-diff" style="width:100%;">
-				<thead>
-					<tr>
-						<th>Date</th>
-						<th>Time</th>
-						<th>Postal Code</th>
-						<th>Duration</th>
-						<th>Direction</th>
-						<th>int.Number</th>
-						<th>int.Name</th>
-						<th>ext.Number</th>
-						<th>ext.Name</th>
-						<th>Transfer From</th>
-						<th>Answered</th>
-						<th>Transfer To</th>
-						<th>Pickuped By</th>
-					</tr>
-				</thead>
-				<tbody>
+				<div class="content">
+					<div class="top_content">
+						<div class="row">
+							<div class="col-md-2">
+								<div class="row">
+									<div class="col-md-12" style="margin-bottom:10px;">
+										<div class="input-group">
+											<input type="text" class="form-control" placeholder="01/05/2018">
+											<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+										</div>
+									</div>
+									
+									<div class="col-md-12">
+										<div class="input-group">
+											<input type="text" class="form-control" placeholder="01/06/2018">
+											<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+										</div>
+									</div>
+								</div>		
+							</div>
+							<div class="col-md-8 pull-right">
+								<div class="row">
+									<div class="col-md-3">
+										<input type="search" class="form-control input-sm" placeholder="Search" aria-controls="table_1">
+									</div>
+									<div class="col-md-3">
+										<input type="search" class="form-control input-sm" placeholder="Search" aria-controls="table_1">
+									</div>
+									<div class="col-md-3">
+										<input type="search" class="form-control input-sm" placeholder="Search" aria-controls="table_1">
+									</div>
+									<div class="col-md-3">
+										<input type="search" class="form-control input-sm" placeholder="Search" aria-controls="table_1">
+									</div>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+					<table id="table_1" class="table table-striped table-bordered table-diff" style="width:100%;">
+						<thead>
+							<tr>
+								<th>Date</th>
+								<th>Time</th>
+								<th>Postal Code</th>
+								<th>Duration</th>
+								<th>Direction</th>
+								<th>int.Number</th>
+								<th>int.Name</th>
+								<th>ext.Number</th>
+								<th>ext.Name</th>
+								<th>Transfer From</th>
+								<th>Answered</th>
+								<th>Transfer To</th>
+								<th>Pickuped By</th>
+							</tr>
+						</thead>
+						<tbody>
 
-				</tbody>
-			</table>
-            </div>
+						</tbody>
+					</table>
+				</div>
+			</div>	
         </div>
 		<script>
 			Url = '{!! url("anrufe_all/dtAjax") !!}';
@@ -147,13 +136,14 @@
 			function listingRecord(ids, Url, dataColumns) {
 				var table = $("#"+ids).DataTable({
 					dom: 'lBfrtip',
+					destroy: true,
 					paging: true,
 					filter: true,
 					info: true,
 					buttons: [ 
 						{
 							extend: 'collection',
-							text: '<i class="glyphicon glyphicon-export"></i> <span class="caret"></span>',
+							text: 'Export <span class="caret"></span>',
 							buttons: ['copy', 'csv', 'excel', 'pdf','print']
 						}
 					],
