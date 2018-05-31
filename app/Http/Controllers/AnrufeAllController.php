@@ -15,7 +15,11 @@ class AnrufeAllController extends Controller
 {
     public function index() {
 		
-		return view('anrufe_all.index');	
+		
+		$callDuration = DB::select('SELECT  SEC_TO_TIME( SUM( TIME_TO_SEC( `call_duration` ) ) ) AS call_duration  FROM view_anrufe_all');
+		
+		//dump($callDuration[0]);exit;
+		return view('anrufe_all.index', compact('callDuration'));	
 	}
 	
 	public function dtAjax(Request $request)

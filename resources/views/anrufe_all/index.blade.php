@@ -80,16 +80,16 @@
 							<div class="col-md-8 pull-right">
 								<div class="row">
 									<div class="col-md-3">
-										<input type="search" class="form-control input-sm" placeholder="Search" aria-controls="table_1">
+										<input type="search" class="form-control input-sm" placeholder="Int.Number" id='int_number' aria-controls="table_1">
 									</div>
 									<div class="col-md-3">
-										<input type="search" class="form-control input-sm" placeholder="Search" aria-controls="table_1">
+										<input type="search" class="form-control input-sm" placeholder="Int.Name" id='int_name' aria-controls="table_1">
 									</div>
 									<div class="col-md-3">
-										<input type="search" class="form-control input-sm" placeholder="Search" aria-controls="table_1">
+										<input type="search" class="form-control input-sm" placeholder="Ext.Number" id='ext_number' aria-controls="table_1">
 									</div>
 									<div class="col-md-3">
-										<input type="search" class="form-control input-sm" placeholder="Search" aria-controls="table_1">
+										<input type="search" class="form-control input-sm" placeholder="Ext.Name" id='ext_name' aria-controls="table_1">
 									</div>
 									
 								</div>
@@ -123,15 +123,15 @@
 						<div class="bottom_content_left">
 							<div class="row">
 								<div class="col-md-2 text-center">
-									<span class="bottom-span">242</span>
+									<span class="bottom-span">{{ App\Models\AnrufeAll::count() }}</span>
 									<p class="bottom_p">total calls</p>
 								</div>
 								<div class="col-md-2 text-center">
-									<span class="bottom-span">153:10 h:mm</span>
+									<span class="bottom-span">{{ $callDuration[0]->call_duration }} h:mm</span>
 									<p class="bottom_p">Sum Duration</p>
 								</div>
 								<div class="col-md-2 text-center">
-									<span class="bottom-span">2:17 m:ss</span>
+									<span class="bottom-span"><?php echo round((int)$callDuration[0]->call_duration / App\Models\AnrufeAll::count(), 2);?> m:ss</span>
 									<p class="bottom_p">per call</p>
 								</div>
 							</div>
@@ -192,6 +192,45 @@
 					columns: dataColumns
 				});
 			}
+			
+			$(document).ready(function() {
+				var table = $('#table_1').DataTable();
+					
+				//$('#search-date').datepicker({"dateFormat":"yy/mm/dd"});
+				$('#int_number').on('keyup change', function(){
+					
+					table
+					.column(5)
+					.search(this.value)
+					.draw();
+
+				});
+				$('#int_name').on('keyup change', function(){
+					
+					table
+					.column(6)
+					.search(this.value)
+					.draw();
+
+				});
+				$('#ext_number').on('keyup change', function(){
+					
+					table
+					.column(7)
+					.search(this.value)
+					.draw();
+
+				});
+				$('#ext_name').on('keyup change', function(){
+					
+					table
+					.column(8)
+					.search(this.value)
+					.draw();
+
+				});
+			  
+			});
 		</script>
 		
 		
